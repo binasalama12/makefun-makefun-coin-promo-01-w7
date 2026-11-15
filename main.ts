@@ -32,8 +32,13 @@ function buildQuestLog(launch) {
   lines.push("[x] Build the adventurer — Side Quest (QUEST) coin, repo and quest-log generator");
   lines.push("[x] Launch the coin — QUEST created on pump.fun (Solana)");
   lines.push("[x] Submit the entry — repo, LAUNCH.json and metadata delivered for judging");
+  lines.push("[ ] Await the verdict — entries are judged and ranked in the open on make.fun");
   lines.push("[ ] Claim the loot — winners are paid in USDC on make.fun");
+  lines.push("[ ] Scout the next quest — the bounty board always has another marker");
+  const done = lines.filter((l) => l.startsWith("[x]")).length;
+  const total = lines.filter((l) => l.startsWith("[")).length;
   lines.push("");
+  lines.push("Progress: " + done + "/" + total + " quest steps complete");
   lines.push("Every bounty on make.fun is a side quest with real loot:");
   lines.push("finish the quest, climb the open rankings, take the USDC home.");
   return lines.join("\n") + "\n";
